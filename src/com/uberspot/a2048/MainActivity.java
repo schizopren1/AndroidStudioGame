@@ -20,7 +20,7 @@ import android.widget.Toast;
 
 import java.util.Locale;
 
-import de.cketti.changelog.dialog.DialogChangeLog;
+//import de.cketti.changelog.dialog.DialogChangeLog;
 
 public class MainActivity extends Activity {
 
@@ -69,10 +69,10 @@ public class MainActivity extends Activity {
 
         setContentView(R.layout.activity_main);
 
-        DialogChangeLog changeLog = DialogChangeLog.newInstance(this);
-        if (changeLog.isFirstRun()) {
-            changeLog.getLogDialog().show();
-        }
+        // DialogChangeLog changeLog = DialogChangeLog.newInstance(this);
+        // if (changeLog.isFirstRun()) {
+        //    changeLog.getLogDialog().show();
+        //  }
 
         // Load webview with game
         mWebView = findViewById(R.id.mainWebView);
@@ -89,9 +89,7 @@ public class MainActivity extends Activity {
         } else {
             // Load webview with current Locale language
             mWebView.loadUrl("file:///android_asset/2048/index.html?lang=" + Locale.getDefault().getLanguage());
-        }
-
-        Toast.makeText(getApplication(), R.string.toggle_fullscreen, Toast.LENGTH_SHORT).show();
+        }Toast.makeText(getApplication(), R.string.toggle_fullscreen, Toast.LENGTH_SHORT).show();
         // Set fullscreen toggle on webview LongClick
         mWebView.setOnTouchListener((v, event) -> {
             // Implement a long touch action by comparing
